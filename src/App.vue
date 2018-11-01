@@ -7,6 +7,42 @@
     <router-view/>
   </div>
 </template>
+<script>
+// @ is an alias to /src
+// import HelloWorld from '@/components/HelloWorld.vue'
+
+export default {
+  data () {
+    return {
+      loading: false,
+      post: null,
+      error: null
+    }
+  },
+  createds () {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.fetchData();
+  },
+  watch: {
+    // call again the method if the route changes
+    '$route': 'fetchData'
+  },
+  methods: {
+    fetchData () {
+     fetch("https://api.myjson.com/bins/udbm5")
+  .then(function (response) {
+    console.log(hello);
+   return response.json();
+  })
+  .then(function (myJson) {
+   let data = myJson.books;
+   console.log(data);
+    }
+  )}
+}
+}
+</script>
 
 <style>
 #app {
