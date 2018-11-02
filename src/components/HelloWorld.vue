@@ -1,5 +1,7 @@
 <template>
+
   <div class="hello">
+    
     <h1>{{ newsObj.title }}</h1>
     <p>{{newsObj.tag}}</p>
   

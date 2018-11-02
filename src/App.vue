@@ -1,52 +1,89 @@
 <template>
-  <div id="app">
-    <div id="nav">
+   <div id="app">
+  <!--   <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view/> -->
+     
+    <h1>Hiu's Book Shop</h1>
+    <label>Search:</label>
+    <input v-model="searchBooks" placeholder="Enter the Book Name"/>
+      <div v-if="isLoading">
+        <p>Wait</p>
+      </div>
+      <div v-else>
+        <BooksComponent :BooksComponent="filterTheBook"/>
+      </div>
+  
+
   </div>
 </template>
-<script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 
+<script>
+import BooksComponent from "@/components/BooksComponent.vue";
 export default {
-  data () {
+  name: "app",
+  data() {
     return {
-      loading: false,
-      post: null,
-      error: null
-    }
+      books: [],
+      searchBooks:'',
+      isLoading: true
+    };
   },
-  createds () {
-    // fetch the data when the view is created and the data is
-    // already being observed
-    this.fetchData();
+  components: {
+    BooksComponent
   },
-  watch: {
-    // call again the method if the route changes
-    '$route': 'fetchData'
+     computed: {
+        filterTheBook() {
+      //     const mySearch = this.searchBooks
+      //     console.log("nami: " + mySearch);
+      // return this.books.filter(function(book) {
+      //   console.log("hiu: " + JSON.stringify(book));
+      //   let matchTheBook = new RegExp('(' + mySearch + ')', 'i');
+      //     console.log("nami: " + matchTheBook);
+      //   return book.titulo.match(matchTheBook);
+      let bookSearch= this.searchBooks;
+          if(bookSearch==''){
+            
+            return this.books;
+            console.log(this.books)
+          }else { return this.books.filter(allBooks=>allBooks.titulo.toLowerCase().includes(bookSearch.toLowerCase()))
+
+          // data.filter(book => book.titulo.toLowerCase().includes(searchtxt.toLowerCase()))
+          console.log(bookSearch + "test")}
+        
+         }
+
+      }
+    ,
+ 
+  created() {
+    this.getFetch();
   },
   methods: {
-    fetchData () {
-     fetch("https://api.myjson.com/bins/udbm5")
-  .then(function (response) {
-    console.log(hello);
-   return response.json();
-  })
-  .then(function (myJson) {
-   let data = myJson.books;
-   console.log(data);
+    getFetch: function() {
+      fetch("https://api.myjson.com/bins/udbm5", {
+        method: "GET"
+      })
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          this.books = data.books;
+          console.log(this.books);
+          this.isLoading = false;
+        });
     }
-  )}
-}
-}
+  }
+};
 </script>
+
+
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -55,12 +92,10 @@ export default {
 #nav {
   padding: 30px;
 }
-
 #nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-
 #nav a.router-link-exact-active {
   color: #42b983;
 }
