@@ -7,13 +7,19 @@
     <router-view/> -->
      
     <h1>Hiu's Book Shop</h1>
-    <label>Search:</label>
-    <input v-model="searchBooks" placeholder="Enter the Book Name"/>
+    <span>Search by title :</span>
+<input v-model="searchBook" placeholder="Enter the book name"></input>
+    </div>
+    </div>
+		</div>
+     
+  
+    
       <div v-if="isLoading">
         <p>Wait</p>
       </div>
       <div v-else>
-        <BooksComponent :BooksComponent="filterTheBook"/>
+        <BooksComponent :passingAllBooks="books"/>
       </div>
   
 
@@ -22,41 +28,26 @@
 
 <script>
 import BooksComponent from "@/components/BooksComponent.vue";
+import OneBookComponent from "@/components/OneBookComponent.vue";
 export default {
   name: "app",
   data() {
     return {
       books: [],
-      searchBooks:'',
+      searchBook:'',
       isLoading: true
     };
   },
   components: {
-    BooksComponent
+    BooksComponent,
+    OneBookComponent
   },
-     computed: {
-        filterTheBook() {
-      //     const mySearch = this.searchBooks
-      //     console.log("nami: " + mySearch);
-      // return this.books.filter(function(book) {
-      //   console.log("hiu: " + JSON.stringify(book));
-      //   let matchTheBook = new RegExp('(' + mySearch + ')', 'i');
-      //     console.log("nami: " + matchTheBook);
-      //   return book.titulo.match(matchTheBook);
-      let bookSearch= this.searchBooks;
-          if(bookSearch==''){
-            
-            return this.books;
-            console.log(this.books)
-          }else { return this.books.filter(allBooks=>allBooks.titulo.toLowerCase().includes(bookSearch.toLowerCase()))
-
-          // data.filter(book => book.titulo.toLowerCase().includes(searchtxt.toLowerCase()))
-          console.log(bookSearch + "test")}
-        
-         }
-
-      }
-    ,
+  //    computed: {
+  //     getSearch() {
+  //       // let searchtxt = document.getElementById("myInput").value;
+  //        return this.books.filter(book => book.titulo.toLowerCase().includes(searchtxt.toLowerCase()));
+  //     }
+  // },
  
   created() {
     this.getFetch();
