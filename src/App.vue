@@ -7,8 +7,8 @@
     <router-view/> -->
      
     <h1>Hiu's Book Shop</h1>
-    <span>Search by title :</span>
-<input v-model="searchBook" placeholder="Enter the book name"/>
+    <span>Search by title :   </span>
+    <input v-model="searchBook" placeholder="Enter the book name"/>
     
   
 
@@ -21,8 +21,6 @@
       <div v-else>
         <BooksComponent :passingAllBooks="filterTheBooks"/>
       </div>
-  
-
   </div>
 </template>
 
@@ -34,7 +32,7 @@ export default {
   data() {
     return {
       books: [],
-      searchBook:'',
+      searchBook: "",
       isLoading: true
     };
   },
@@ -43,17 +41,19 @@ export default {
     OneBookComponent
   },
   computed: {
-		filterTheBooks() {
+    filterTheBooks() {
       var searchOneBook = this.searchBook;
-			if (searchOneBook== "") {
+      if (searchOneBook == "") {
         return this.books;
-        console.log("Hiu" + this.books);
-			} 
-				// console.log(this.searchWords);
-				return this.books.filter(book => book.titulo.toLowerCase().includes(searchOneBook.toLowerCase()));
-		}
-	},
- 
+        // console.log("Hiu" + this.books);
+      }
+      // console.log(this.searchWords);
+      return this.books.filter(book =>
+        book.titulo.toLowerCase().includes(searchOneBook.toLowerCase())
+      );
+    }
+  },
+
   created() {
     this.getFetch();
   },

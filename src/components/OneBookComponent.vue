@@ -13,18 +13,34 @@
       <div class="back">
           <h4>{{passingOneBook.titulo}}</h4>
           <p>{{passingOneBook.descripcion}}</p>
-          <button v-on:click="passingOneBook.portada">More Info</button>
+          <!-- <button v-on:click="passingOneBook.portada">More Info</button> -->
+            <button id="show-modal" @click="showModal = true">More Info</button>
+        
       </div>
 		</div>
+    
     </div>
+     <!-- use the modal component, pass in the prop -->
+  <Modal v-if="showModal" @close="showModal = false">
+    <!--
+      you can use custom content here to overwrite
+      default content
+    -->
+    <h3 slot="header"> <img class="oneImage" :src="passingOneBook.detalle" height="350" width="280"></h3>
+  </Modal>
   </div>
   
 
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue'
 export default {
   name: "oneBook",
+  data(){
+    return {showModal: false}
+  },
+  components:{Modal},
   props: ["passingOneBook"],
   mounted() {
     console.log(
@@ -47,11 +63,13 @@ export default {
 	/* flip the pane when hovered */
 	.flip-container:hover .flipper, .flip-container.hover .flipper {
 		transform: rotateY(180deg);
+	
 	}
 
 .flip-container, .front, .back {
 	width: 320px;
 	height: 480px;
+	margin-bottom: -6%;
 }
 
 /* flip speed goes here */
@@ -84,6 +102,36 @@ export default {
 }
 
 
+#modal-body img{
+	margin-bottom: 5%;
+	margin-top: 5%;
+	   margin-left: 6%;
+/*    margin-right: auto;*/
+	
+	  border-radius: 8px;
+	 width: 440px;
+	height: 480px;
+}
+
+
+#books{
+	margin-left: 7%;
+
+	
+}
+
+.navbar{
+	margin-left:7.5%;
+	margin-top:3%;
+}
+
+.line{
+	margin-top: 0%;
+}
+
+input{
+	/* margin-left:-3%;  */
+}
 
 
 </style>
