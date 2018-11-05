@@ -1,8 +1,8 @@
 <template>
 
-<div class="book_container d-flex flex-wrap mt-3 mb-3 align-items-center justify-content-start">
+<div class="book_container d-flex flex-wrap mt-1 mb-1 align-items-center justify-content-start">
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">	
-		<div class="flipper d-flex flex-wrap  mt-3 mb-3 align-items-center justify-content-start">
+		<div class="flipper d-flex flex-wrap  mt-1 mb-1 align-items-center justify-content-start">
       <div class="front">
          <img class="oneImage" :src="passingOneBook.portada" height="350" width="280">
       </div>
@@ -102,9 +102,7 @@ export default {
 	margin-bottom: 5%;
 	margin-top: 5%;
 	   margin-left: 6%;
-/*    margin-right: auto;*/
-	
-	  border-radius: 8px;
+	  border-radius: 15px;
 	 width: 440px;
 	height: 480px;
 }

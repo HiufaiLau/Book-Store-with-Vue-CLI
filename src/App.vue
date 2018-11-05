@@ -1,39 +1,33 @@
 <template>
-   <div id="app">
-  <!--   <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/> -->
-     <div class="container">
-  <div class="row">
-   <div class="navbar">
+<div id="app">
+<div class="container">
+   <div class="logo">
     <img src="./assets/books.png" height="60" width="80">
-    <div class="col-1">
+     </div>
+    <div class="title">
     <span>
      <h1 style="font-family: 'Baloo Bhaijaan', cursive;">Hiu's Book Shop</h1>
     </span>
     </div>
-     <div class="col-1">
+     <div class="searchBar">
     <span>Search by title :   </span>
-    <input v-model="searchBook" placeholder="Enter the book name" class="form-control " type="text" id="myInput"/>
-     </div>
+    <input v-model="searchBook" placeholder="Enter the book name"/>     
     </div>
-   </div>
-  </div>
-
- 
-
-     
-  
-    
+     <!-- <hr> -->
+    <div class="booksBody">
       <div v-if="isLoading">
-        <p>Loading ...</p>
+       <img src="./assets/lodaing.gif" height="60" width="80">
       </div>
       <div v-else>
         <BooksComponent :passingAllBooks="filterTheBooks"/>
       </div>
-  </div>
+      <!-- <hr class="line"> -->
+      </div>
+</div>
+<div class="card-footer text-center mt-3 mb-3 bg-secondary text-white rounded-0">
+            &copy;2018 Ubiqum| All Rights reserved
+        </div>
+</div>
 </template>
 
 <script>
@@ -106,10 +100,39 @@ export default {
 }
 #nav a.router-link-exact-active {
   color: #42b983;
+  }
+
+.container {
+  display: grid; 
+	grid-template-columns: auto auto auto auto auto;
+  /* grid-template-columns: 100px 600px auto; */
+  grid-gap: 10px;
+	padding: 30px;
 }
 
-.navbar{
-	margin-left:7.5%;
-	margin-top:3%;
+.logo {
+  grid-row: 1;
+  grid-column: 1;
 }
+.title {
+	grid-row: 1;
+  grid-column: 2;
+	display: flex;
+	align-items: baseline;
+}
+.searchBar {
+  grid-row: 1;
+  grid-column: 3;
+  display: flex;
+	align-items: baseline;
+}
+
+.booksBody{
+grid-row: 2;
+  grid-column: 1/3;
+}
+/* hr{
+  grid-row:2; 
+} */
+
 </style>
