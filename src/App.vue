@@ -8,10 +8,10 @@
      
     <h1>Hiu's Book Shop</h1>
     <span>Search by title :</span>
-<input v-model="searchBook" placeholder="Enter the book name"></input>
-    </div>
-    </div>
-		</div>
+<input v-model="searchBook" placeholder="Enter the book name"/>
+    
+  
+
      
   
     
@@ -19,7 +19,7 @@
         <p>Wait</p>
       </div>
       <div v-else>
-        <BooksComponent :passingAllBooks="books"/>
+        <BooksComponent :passingAllBooks="filterTheBooks"/>
       </div>
   
 
@@ -42,12 +42,17 @@ export default {
     BooksComponent,
     OneBookComponent
   },
-  //    computed: {
-  //     getSearch() {
-  //       // let searchtxt = document.getElementById("myInput").value;
-  //        return this.books.filter(book => book.titulo.toLowerCase().includes(searchtxt.toLowerCase()));
-  //     }
-  // },
+  computed: {
+		filterTheBooks() {
+      var searchOneBook = this.searchBook;
+			if (searchOneBook== "") {
+        return this.books;
+        console.log("Hiu" + this.books);
+			} 
+				// console.log(this.searchWords);
+				return this.books.filter(book => book.titulo.toLowerCase().includes(searchOneBook.toLowerCase()));
+		}
+	},
  
   created() {
     this.getFetch();

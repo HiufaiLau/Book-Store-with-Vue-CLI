@@ -1,14 +1,14 @@
 <template>
 
 <div class="book_container d-flex flex-wrap mt-3 mb-3 align-items-center justify-content-start">
-    <OneBookComponent 
+    <!-- <OneBookComponent 
       v-for="(singleBook, index) in passingAllBooks"  
       :passingOneBook="singleBook"
-      :key="index"/>
+      :key="index"/> -->
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">	
 		<div class="flipper d-flex flex-wrap  mt-3 mb-3 align-items-center justify-content-start">
       <div class="front">
-         <img class="oneImage" :src="passingOneBook.portada" height="250" width="200">
+         <img class="oneImage" :src="passingOneBook.portada" height="350" width="280">
       </div>
       <div class="back">
           <h4>{{passingOneBook.titulo}}</h4>
