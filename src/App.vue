@@ -1,29 +1,33 @@
 <template>
-<div id="app" class='container'>
-<div class="header">
-   <div class="logo">
-    <img src="./assets/books.png" height="60" width="80">
-     </div>
-    <div class="title">
-    <span>
-     <h1 style="font-family: 'Baloo Bhaijaan', cursive">Hiu's Book Shop</h1>
-    </span>
+<div id="app" class="container">
+<div class="row" style=" margin-top: 2%;">
+   <div class="navbar col-1">
+        <img src="./assets/books.png" height="60" width="80">
+   </div>
+    <div class="col-6" style=" padding-top: 20px;">
+      <span>
+        <h1 style="font-family: 'Baloo Bhaijaan', cursive;">Hiu's Book Shop</h1>
+      </span>
     </div>
-     <div class="searchBar">
-    <span>Search by title :   </span>
-    <input v-model="searchBook" placeholder="Enter the book name"/>     
+    <div class="col-2" style=" padding-top: 30px;">
+       <span>Search by title :   </span>
+    </div>
+    <div class="col-1" style=" padding-top: 30px;">
+       <form class="form-inline">
+         <input class="form-control " v-model="searchBook" placeholder="Enter the book name"/>     
+       </form>
     </div>
 </div>    
-     <!-- <hr> -->
-<div class="container">
+     <hr>
+
       <div v-if="isLoading">
        <img src="./assets/lodaing.gif" height="60" width="80">
       </div>
       <div v-else>
-        <BooksComponent :passingAllBooks="filterTheBooks"/>
+        <BooksComponent class="books" :passingAllBooks="filterTheBooks"/>
       </div>
       <!-- <hr class="line"> -->
-</div>
+
 
 <div class="card-footer text-center mt-3 mb-3 bg-secondary text-white rounded-0">
             &copy;2018 Ubiqum| All Rights reserved
@@ -103,6 +107,18 @@ export default {
   color: #42b983;
   }
 
+.books{
+  margin-left: 7%;
+}
+
+h1{
+  margin-top: 3%;
+}
+
+/* .navbar{
+	margin-left:7.5%;
+	margin-top:3%;
+} */
 
 
 </style>

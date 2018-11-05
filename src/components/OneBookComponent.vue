@@ -22,7 +22,7 @@
       you can use custom content here to overwrite
       default content
     -->
-    <h3 slot="header"> <img class="oneImage" :src="passingOneBook.detalle" height="350" width="280"></h3>
+    <h3 slot="header"> <img class="oneImage" :src="passingOneBook.detalle" height="350" width="330"></h3>
   </Modal>
   
   </div>
