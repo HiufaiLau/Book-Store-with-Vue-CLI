@@ -22,7 +22,7 @@
       you can use custom content here to overwrite
       default content
     -->
-    <h3 slot="header"> <img class="oneImage" :src="passingOneBook.detalle" height="350" width="330"></h3>
+    <h3 slot="header"> <img class="oneImage" :src="passingOneBook.detalle" height="350" width="330" style="border-radius=10px;"></h3>
   </Modal>
   
   </div>
@@ -45,8 +45,6 @@ export default {
   },
 
   methods: {
-    // putImgInModal: function (event) {
-    // }
   }
 };
 </script>
@@ -101,9 +99,9 @@ export default {
 #modal-body img{
 	margin-bottom: 5%;
 	margin-top: 5%;
-	   margin-left: 6%;
-	  border-radius: 15px;
-	 width: 440px;
+	margin-left: 6%;
+	border-radius: 15px;
+	width: 440px;
 	height: 480px;
 }
 

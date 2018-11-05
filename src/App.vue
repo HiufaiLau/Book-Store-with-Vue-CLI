@@ -9,8 +9,8 @@
         <h1 style="font-family: 'Baloo Bhaijaan', cursive;">Hiu's Book Shop</h1>
       </span>
     </div>
-    <div class="col-2" style=" padding-top: 30px;">
-       <span>Search by title :   </span>
+    <div class="col-2" style=" padding-top: 35px;">
+       <span style="font-family: 'Poor Story', cursive;">Search by title :   </span>
     </div>
     <div class="col-1" style=" padding-top: 30px;">
        <form class="form-inline">
@@ -21,7 +21,7 @@
      <hr>
 
       <div v-if="isLoading">
-       <img src="./assets/lodaing.gif" height="60" width="80">
+       <img src="./assets/lodaing.gif" height="80" width="80">
       </div>
       <div v-else>
         <BooksComponent class="books" :passingAllBooks="filterTheBooks"/>
