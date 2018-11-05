@@ -1,10 +1,6 @@
 <template>
 
 <div class="book_container d-flex flex-wrap mt-3 mb-3 align-items-center justify-content-start">
-    <!-- <OneBookComponent 
-      v-for="(singleBook, index) in passingAllBooks"  
-      :passingOneBook="singleBook"
-      :key="index"/> -->
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">	
 		<div class="flipper d-flex flex-wrap  mt-3 mb-3 align-items-center justify-content-start">
       <div class="front">
@@ -28,8 +24,8 @@
     -->
     <h3 slot="header"> <img class="oneImage" :src="passingOneBook.detalle" height="350" width="280"></h3>
   </Modal>
-  </div>
   
+  </div>
 
 </template>
 
@@ -118,11 +114,6 @@ export default {
 	margin-left: 7%;
 
 	
-}
-
-.navbar{
-	margin-left:7.5%;
-	margin-top:3%;
 }
 
 .line{

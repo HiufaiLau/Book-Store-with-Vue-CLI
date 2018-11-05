@@ -5,18 +5,30 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/> -->
-     
-    <h1>Hiu's Book Shop</h1>
+     <div class="container">
+  <div class="row">
+   <div class="navbar">
+    <img src="./assets/books.png" height="60" width="80">
+    <div class="col-1">
+    <span>
+     <h1 style="font-family: 'Baloo Bhaijaan', cursive;">Hiu's Book Shop</h1>
+    </span>
+    </div>
+     <div class="col-1">
     <span>Search by title :   </span>
-    <input v-model="searchBook" placeholder="Enter the book name"/>
-    
-  
+    <input v-model="searchBook" placeholder="Enter the book name" class="form-control " type="text" id="myInput"/>
+     </div>
+    </div>
+   </div>
+  </div>
+
+ 
 
      
   
     
       <div v-if="isLoading">
-        <p>Wait</p>
+        <p>Loading ...</p>
       </div>
       <div v-else>
         <BooksComponent :passingAllBooks="filterTheBooks"/>
@@ -94,5 +106,10 @@ export default {
 }
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.navbar{
+	margin-left:7.5%;
+	margin-top:3%;
 }
 </style>
