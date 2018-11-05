@@ -1,20 +1,21 @@
 <template>
-<div id="app">
-<div class="container">
+<div id="app" class='container'>
+<div class="header">
    <div class="logo">
     <img src="./assets/books.png" height="60" width="80">
      </div>
     <div class="title">
     <span>
-     <h1 style="font-family: 'Baloo Bhaijaan', cursive;">Hiu's Book Shop</h1>
+     <h1 style="font-family: 'Baloo Bhaijaan', cursive">Hiu's Book Shop</h1>
     </span>
     </div>
      <div class="searchBar">
     <span>Search by title :   </span>
     <input v-model="searchBook" placeholder="Enter the book name"/>     
     </div>
+</div>    
      <!-- <hr> -->
-    <div class="booksBody">
+<div class="container">
       <div v-if="isLoading">
        <img src="./assets/lodaing.gif" height="60" width="80">
       </div>
@@ -22,8 +23,8 @@
         <BooksComponent :passingAllBooks="filterTheBooks"/>
       </div>
       <!-- <hr class="line"> -->
-      </div>
 </div>
+
 <div class="card-footer text-center mt-3 mb-3 bg-secondary text-white rounded-0">
             &copy;2018 Ubiqum| All Rights reserved
         </div>
@@ -102,37 +103,6 @@ export default {
   color: #42b983;
   }
 
-.container {
-  display: grid; 
-	grid-template-columns: auto auto auto auto auto;
-  /* grid-template-columns: 100px 600px auto; */
-  grid-gap: 10px;
-	padding: 30px;
-}
 
-.logo {
-  grid-row: 1;
-  grid-column: 1;
-}
-.title {
-	grid-row: 1;
-  grid-column: 2;
-	display: flex;
-	align-items: baseline;
-}
-.searchBar {
-  grid-row: 1;
-  grid-column: 3;
-  display: flex;
-	align-items: baseline;
-}
-
-.booksBody{
-grid-row: 2;
-  grid-column: 1/3;
-}
-/* hr{
-  grid-row:2; 
-} */
 
 </style>

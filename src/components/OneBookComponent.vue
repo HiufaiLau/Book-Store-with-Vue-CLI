@@ -10,7 +10,7 @@
           <h4>{{passingOneBook.titulo}}</h4>
           <p>{{passingOneBook.descripcion}}</p>
           <!-- <button v-on:click="passingOneBook.portada">More Info</button> -->
-            <button id="show-modal" @click="showModal = true">More Info</button>
+            <button id="show-modal"  class="btn btn-outline-success" @click="showModal = true">More Info</button>
         
       </div>
 		</div>

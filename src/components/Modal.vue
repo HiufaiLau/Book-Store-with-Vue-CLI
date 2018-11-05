@@ -12,15 +12,15 @@
             </slot>
           </div>
 
-          <div class="modal-body">
+          <!-- <div class="modal-body">
             <slot name="body">
             </slot>
-          </div>
+          </div> -->
 
           <div class="modal-footer">
             <slot name="footer">
               
-              <button class="modal-default-button" @click="$emit('close')">
+              <button class="btn btn-info btn-sm" @click="$emit('close')">
                Close
               </button>
             </slot>
@@ -58,9 +58,9 @@ export default {
 }
 
 .modal-container {
-  width: 300px;
+  width: 400px;
   margin: 0px auto;
-  padding: 30px 30px;
+  padding: 10px 10px;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
