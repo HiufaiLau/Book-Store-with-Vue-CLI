@@ -4,7 +4,7 @@
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">	
 		<div class="flipper d-flex flex-wrap  mt-1 mb-1 align-items-center justify-content-start">
       <div class="front">
-         <img class="oneImage" :src="passingOneBook.portada" height="350" width="280">
+         <img class="oneImage" :src="passingOneBook.portada" height="350" width="280" border-radius=10px>
       </div>
       <div class="back">
           <h4>{{passingOneBook.titulo}}</h4>
@@ -22,7 +22,7 @@
       you can use custom content here to overwrite
       default content
     -->
-    <h3 slot="header"> <img class="oneImage" :src="passingOneBook.detalle" height="350" width="330" style="border-radius=10px;"></h3>
+    <h3 slot="header"> <img class="oneImage" :src="passingOneBook.detalle" height="350" width="330"></h3>
   </Modal>
   
   </div>

@@ -28,8 +28,8 @@
       </div>
       <!-- <hr class="line"> -->
 
-
-<div class="card-footer text-center mt-3 mb-3 bg-secondary text-white rounded-0">
+<hr>
+<div class="text-center mt-3 mb-3 rounded-0">
             &copy;2018 Ubiqum| All Rights reserved
         </div>
 </div>
@@ -109,6 +109,7 @@ export default {
 
 .books{
   margin-left: 7%;
+  margin-bottom: 3%;
 }
 
 h1{
