@@ -18,7 +18,7 @@
        </form>
     </div>
 </div>    
-     <hr>
+     <hr class="footerline">
 
       <div v-if="isLoading">
        <img src="./assets/lodaing.gif" height="80" width="80">
@@ -109,7 +109,7 @@ export default {
 
 .books{
   margin-left: 7%;
-  margin-bottom: 3%;
+  /* margin-bottom: 3%; */
 }
 
 h1{
@@ -120,6 +120,8 @@ h1{
 	margin-left:7.5%;
 	margin-top:3%;
 } */
-
+hr .footerline{
+  margin-top:-1%;
+}
 
 </style>
