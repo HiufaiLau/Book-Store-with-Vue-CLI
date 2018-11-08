@@ -29,7 +29,7 @@
       <!-- <hr class="line"> -->
 
 <hr>
-<div class="text-center mt-3 mb-3 rounded-0" style="font-family: 'Poor Story', cursive;">
+<div  style="font-family: 'Poor Story', cursive;">
             &copy;2018 Ubiqum| All Rights reserved
         </div>
 </div>
